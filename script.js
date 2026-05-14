@@ -1,28 +1,21 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    text-align: center;
-}
+fetch("http://192.168.50.10:8000/mahasiswa")
+.then(response => response.json())
+.then(data => {
 
-header {
-    background: #007bff;
-    color: white;
-    padding: 15px;
-}
+    let output = "";
 
-.card {
-    background: white;
-    padding: 20px;
-    margin: 20px auto;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
+    data.forEach(mhs => {
+        output += `
+            <p>
+                <b>${mhs.nama}</b><br>
+                ${mhs.jurusan}
+            </p>
+        `;
+    });
 
-button {
-    padding: 10px;
-    background: green;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
+    document.getElementById("data-mahasiswa").innerHTML = output;
+
+})
+.catch(error => {
+    console.log(error);
+});
