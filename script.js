@@ -1,4 +1,4 @@
-fetch("http://192.168.1.7:8000/mahasiswa")
+fetch("http://10.238.29.110:8000/mahasiswa")
 .then(response => response.json())
 .then(data => {
 
