@@ -1,4 +1,4 @@
-fetch("http://10.97.187.110:8000/mahasiswa")
+fetch("http://api.smartcampus.local:8000/mahasiswa")
 .then(response => response.json())
 .then(data => {
 
